@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+
+.body {
+    margin: 0;
+    background-color: #F0FBFF;
+    font-family: 'Raleway', serif;
+}
+/******************** ALIGN ELEMENTS INSIDE DIV ********************/
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/*******************************************************************/
+
+/************************* INPUT TYPE FILE *************************/
+
+.drop_box {
+    margin: 10px 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dotted #a3a3a3;
+    border-radius: 5px;
+}
+
+/*.drop_box h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2e2e2e;
+}*/
+
+.drop_box p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #6b6b6b;
+}
+
+.btn {
+    background-color: #00B7FF;
+    color: #F0FBFF;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #F0FBFF;
+    color: #00B7FF;
+    padding: 10px 20px;
+    border: none;
+    outline: 1px solid #00B7FF;
+    border-radius: 5px;
+}
+
+/*******************************************************************/
+
+/************************* INPUT TYPE TEXT *************************/
+
+.input, input[type="text"] {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0.2rem;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.input:focus, input[type="text"]:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-bottom-color: #777;
+}
+
+.input::placeholder {
+    color: #777;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+/*******************************************************************/
+/*******************************************************************/
+/*******************************************************************/
+/*******************************************************************/
+
+
+/*****************************************************
+ * styles
+ *****************************************************/
+html, body, app-root, app-game {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    color:  #ccc;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/*************************************************************************/
+.selection-background {
+    background-image: radial-gradient(circle, #6a4989, #644383, #5e3d7d, #593778, #533172, #4c2b6b, #452563, #3e1f5c, #351852, #2c1049, #23093f, #1b0036);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/************************************************************************/
+

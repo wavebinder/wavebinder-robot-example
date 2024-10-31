@@ -1,0 +1,30 @@
+<mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>Country</mat-label>
+    <mat-select (selectionChange)="wbService.setValue($event.value,whichCountry+'Country')">
+        @for (country of wbService.getChoices(whichCountry + 'Country'); track country) {
+            <mat-option [value]="country">{{ country }}</mat-option>
+        }
+    </mat-select>
+</mat-form-field>
+<div class="grid-selection-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Capital</mat-label>
+        <input matInput [value]="wbService.getNodeValue(whichCountry+'Capital')" [readonly]="true">
+        <mat-icon matSuffix color="primary">pin_drop</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Population</mat-label>
+        <input matInput [value]="wbService.getNodeValue(whichCountry+'Population')" [readonly]="true">
+        <mat-icon matSuffix color="primary">emoji_people</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Latitude</mat-label>
+        <input matInput [value]="getCoordinatesValues(whichCountry+'Coordinates','latitude')" [readonly]="true">
+        <mat-icon matSuffix color="primary">explore</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Longitude</mat-label>
+        <input matInput [value]="getCoordinatesValues(whichCountry+'Coordinates','longitude')" [readonly]="true">
+        <mat-icon matSuffix color="primary">explore</mat-icon>
+    </mat-form-field>
+</div>

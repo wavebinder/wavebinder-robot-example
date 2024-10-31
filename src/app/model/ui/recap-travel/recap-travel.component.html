@@ -1,0 +1,33 @@
+<span class="span-switch">Total distance:<mat-icon color="primary">road</mat-icon></span>
+<mat-form-field appearance="outline">
+    <input matInput [value]="getTotalDistance()| numberWithGrouping:2" [readonly]="true">
+    <span matTextSuffix>km</span>
+</mat-form-field>
+<ng-container>
+    <span class="span-switch">Average speed:  <mat-icon color="primary">speed</mat-icon></span>
+    <div style="display:flex;gap: 5%; margin-top: 2%">
+        <mat-slider style="width: 100%" [disabled]="true" [max]="1000" [min]="0"
+                    [step]="10">
+            <input matSliderThumb #slider [value]="this.getAverageSpeed()">
+        </mat-slider>
+        <label class="example-value-label">{{ slider.value }} m/s</label>
+    </div>
+</ng-container>
+<span class="span-switch">Total travel time: <mat-icon color="primary">schedule</mat-icon></span>
+<div style="display:flex;gap: 5%; margin-top: 2%">
+    <mat-form-field appearance="outline">
+        <mat-label>Hours</mat-label>
+        <input matInput [value]="getTotalTimeValue('hours')" type="number"
+               readonly='true'>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Minutes</mat-label>
+        <input matInput [value]="getTotalTimeValue('minutes')"
+               type="number" readonly='true'>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Seconds</mat-label>
+        <input matInput [value]="getTotalTimeValue('seconds')"
+               type="number" readonly='true'>
+    </mat-form-field>
+</div>

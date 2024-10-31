@@ -1,0 +1,43 @@
+<div style="margin: 5% 3% 3% 3%">
+    <span class="span-switch">Distance: <mat-icon color="primary">route</mat-icon></span><br>
+    <mat-form-field appearance="outline">
+        <input matInput [value]="wbService.getNodeValue('distance')| numberWithGrouping:2" [readonly]="true">
+        <span matTextSuffix>km</span>
+    </mat-form-field>
+    <!--<div class="grid-container-switch">
+        <span class="span-switch">Calculate based on: </span>
+        <div class="btn-container">
+            <label class="switch btn-color-mode-switch">
+                <input value="1" id="color_mode" name="color_mode" type="checkbox"
+                       (change)="changeCalculationField($event)">
+                <label class="btn-color-mode-switch-inner" data-off="Speed" data-on="Time" for="color_mode"></label>
+            </label>
+        </div>
+    </div>-->
+    <br>
+    <span class="span-switch">Speed:  <mat-icon
+            color="primary">speed</mat-icon></span>
+    <div style="display:flex;gap: 5%; margin-top: 2%">
+        <mat-slider style="width: 100%" [disabled]="false" [max]="1000" [min]="0" [step]="10">
+            <input matSliderThumb #slider (change)="setSpeed(slider.value)"
+                   [value]="this.wbService.getNodeValue('travelSpeed')">
+        </mat-slider>
+        <label class="example-value-label">{{ slider.value }} m/s</label>
+    </div>
+    <br>
+    <span class="span-switch">Travel time: <mat-icon color="primary">schedule</mat-icon></span>
+    <div style="display:flex;gap: 5%; margin-top: 2%">
+        <mat-form-field appearance="outline">
+            <mat-label>Hours</mat-label>
+            <input matInput [value]="wbService.getNodeValue('travelTime')?.hours" type="number" readonly='true'>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Minutes</mat-label>
+            <input matInput [value]="wbService.getNodeValue('travelTime')?.minutes" type="number" readonly='true'>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Seconds</mat-label>
+            <input matInput [value]="wbService.getNodeValue('travelTime')?.seconds" type="number" readonly='true'>
+        </mat-form-field>
+    </div>
+</div>

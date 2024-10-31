@@ -1,0 +1,57 @@
+<div>
+    <ul class='timeline'>
+        @for (element of getDistanceNode().getNodeValue(); track element) {
+            <li class='work'>
+                <input class='radio' id='{{"work"+$index}}' name='works' type='radio' checked>
+                <label for='{{"work"+$index}}'>
+                    <output class='circle'></output>
+                </label>
+                <div class='content'>
+                    <label for='{{"work"+$index}}' class="label">{{ retrieveRoute(element) }}</label>
+                    <p>
+                        <br>
+                        <ng-container style="display: flex">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Distance
+                                    <mat-icon color="primary">route</mat-icon>
+                                </mat-label>
+                                <input matInput [value]="element?.distance| numberWithGrouping:2" [readonly]="true">
+                                <span matTextSuffix>km</span>
+                            </mat-form-field>
+                            <ng-container>
+                                <span class="span-switch">Speed:  <mat-icon color="primary">speed</mat-icon></span>
+                                <div style="display:flex;gap: 5%; margin-top: 2%">
+                                    <mat-slider style="width: 100%" [disabled]="false" [max]="1000" [min]="0"
+                                                [step]="10">
+                                        <input matSliderThumb #slider (change)="setSpeed(slider.value,$index)"
+                                               [value]="this.getSpeedListNode().children[$index].getNodeValue()">
+                                    </mat-slider>
+                                    <label class="example-value-label">{{ slider.value }} m/s</label>
+                                </div>
+                            </ng-container>
+                            <span class="span-switch">Travel time: <mat-icon color="primary">schedule</mat-icon></span>
+                            <div style="display:flex;gap: 5%; margin-top: 2%">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Hours</mat-label>
+                                    <input matInput [value]="getTimeValue($index,'hours')" type="number"
+                                           readonly='true'>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Minutes</mat-label>
+                                    <input matInput [value]="getTimeValue($index,'minutes')"
+                                           type="number" readonly='true'>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Seconds</mat-label>
+                                    <input matInput [value]="getTimeValue($index,'seconds')"
+                                           type="number" readonly='true'>
+                                </mat-form-field>
+                            </div>
+                        </ng-container>
+                    </p>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+

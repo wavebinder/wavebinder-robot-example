@@ -1,0 +1,30 @@
+<li style="list-style-type: none">
+    <ng-container *ngIf="nodePoint?.name != null">
+        <b>{{ nodePoint.name }}</b>
+    </ng-container>
+    <ng-container *ngIf="nodePoint.valueIsArray;else second">
+        <span style="padding-left:1rem">[</span>
+        <ul>
+            <ng-container *ngFor="let child of nodePoint.children">
+                <app-data-pool-scheme [nodePoint]="child"></app-data-pool-scheme>
+                <ng-container *ngIf="child.children != null">
+                    <span>%7B,</span>
+                </ng-container>
+            </ng-container>
+        </ul>
+        <p> ]</p>
+    </ng-container>
+</li>
+
+<ng-template #second>
+    <ng-container *ngIf="nodePoint.children!==null;else third">
+        <ul>
+            <ng-container *ngFor="let child of nodePoint.children">
+                <app-data-pool-scheme [nodePoint]="child"></app-data-pool-scheme>
+            </ng-container>
+        </ul>
+    </ng-container>
+</ng-template>
+<ng-template #third>
+    <input type="text" [value]="nodePoint.nodeValue" name="nodePoint.path" onkeyup="updateValue(e,value)" class="input">
+</ng-template>

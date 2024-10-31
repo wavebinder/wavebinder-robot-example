@@ -1,0 +1,47 @@
+.mat-tab {
+  margin: 4% 5% 5% 5%;
+}
+
+mat-card {
+  height: 85%;
+  width: 80%;
+  background: #e2e0e7;
+}
+
+h4 {
+  color: #23093f;
+  padding-bottom: 2%;
+  margin: 3% 0 0 0;
+}
+
+span {
+  font-size: large;
+}
+
+mat-tab-group{
+  max-height: 85vh
+}
+.grid-selection-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 4%;
+}
+
+
+/***************************************************************************************/
+.span-switch {
+  font-size: large;
+  color: #1b0036;
+  padding-right: 10%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.grid-container-switch {
+  display: flex;
+  align-items: center;
+}
+mat-icon{
+  padding-left: 2%;
+}

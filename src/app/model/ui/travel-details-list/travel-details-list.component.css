@@ -1,0 +1,107 @@
+
+.timeline {
+    list-style: none;
+    margin: 20px 0 30px 0;
+    padding-left: 33px;
+    border-left: 3px dashed #bb6347;
+}
+
+.circle {
+    margin-top: -10px;
+    top: 50%;
+    left: -44px;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border: 4px solid #bb6347;;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+}
+
+.timeline li {
+    margin: 40px 0;
+    position: relative;
+}
+
+.timeline p {
+    margin: 0 0 15px;
+}
+
+.date {
+    margin-top: -10px;
+    top: 50%;
+    left: -158px;
+    font-size: 0.95em;
+    line-height: 20px;
+    position: absolute;
+    color: #0d0c22;
+}
+
+/*************************************************************/
+
+
+.content {
+    min-height: 8vh;
+    border-color: transparent;
+    border-radius: 0.5em;
+    position: relative;
+    padding: 0 5% 0 5%;
+    box-shadow: 0 5px 30px rgb(27, 0, 54, 0.2);
+}
+
+.content:before, .content:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    position: absolute;
+    pointer-events: none;
+    right: 100%;
+}
+
+.content p {
+    max-height: 0;
+    color: transparent;
+    text-align: justify;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+
+
+.radio {
+    display: none;
+}
+
+.radio:checked + .relative label {
+    cursor: auto;
+    transform: translateX(42px);
+}
+
+
+
+.radio:checked ~ .content {
+    max-height: 500px;
+    border-color: #000000;
+    padding: 0 5% 3% 5%;
+    transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+}
+
+
+.radio:checked ~ .content p {
+    max-height: 500px;
+    color: #000000;
+    transition: color 0.3s linear 0.3s;
+}
+
+.label {
+    width: 100%;
+    color: #0d0c22;
+    font-weight: bold;
+    font-size: large;
+    padding-top: 5%;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s linear
+}

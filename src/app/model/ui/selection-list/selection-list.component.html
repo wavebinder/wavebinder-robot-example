@@ -1,0 +1,59 @@
+<mat-accordion>
+    <div cdkDropList (cdkDropListDropped)="drop($event)">
+        @for (child of getCountryListNode().children; track child) {
+            <div style="display: flex;align-items: center" cdkDrag>
+                <mat-expansion-panel style="width: 85%;padding-right: 2%">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            @if ($first) {
+                                Starting point
+                            } @else {
+                                Arriving point {{ $index }}
+                            }
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Country</mat-label>
+                        <mat-select (selectionChange)="setValue($event.value,$index)">
+                            @for (country of getChoices(child); track country) {
+                                <mat-option [value]="country">{{ country.country }}</mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="grid-selection-container">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Capital</mat-label>
+                            <input matInput [value]="getCountryInfos('capital',$index)" [readonly]="true">
+                            <mat-icon matSuffix color="primary">pin_drop</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Population</mat-label>
+                            <input matInput [value]="getCountryInfos('population',$index)" [readonly]="true">
+                            <mat-icon matSuffix color="primary">emoji_people</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Latitude</mat-label>
+                            <input matInput [value]="getCountryInfos('latitude',$index)" [readonly]="true">
+                            <mat-icon matSuffix color="primary">explore</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Longitude</mat-label>
+                            <input matInput [value]="getCountryInfos('longitude',$index)"
+                                   [readonly]="true">
+                            <mat-icon matSuffix color="primary">explore</mat-icon>
+                        </mat-form-field>
+                    </div>
+                </mat-expansion-panel>
+                <div style="display: flex;width: 8%">
+                    <button mat-icon-button (click)="addSelection($index)" color="primary">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                    <button mat-icon-button [hidden]="$index==0" (click)="removeSelection($index)" color="primary">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <br>
+        }
+    </div>
+</mat-accordion>

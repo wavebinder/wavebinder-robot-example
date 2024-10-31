@@ -1,0 +1,29 @@
+/******************** ALIGN ELEMENTS INSIDE DIV ********************/
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+/*******************************************************************/
+
+/************************* INPUT TYPE FILE *************************/
+
+.drop_box {
+    margin: 10px 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dotted #a3a3a3;
+    border-radius: 5px;
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
