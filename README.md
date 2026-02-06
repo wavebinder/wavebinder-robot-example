@@ -1,27 +1,72 @@
-# AngularWaveBinder
+# wavebinder-robot-example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+This repository is a **basic example project** showing how to use the **Wavebinder™ library** in a simple frontend application. It is *not* a full production app, but a reference to understand how Wavebinder integrates with a UI project.
 
-## Development server
+## What this is
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+`wavebinder-robot-example` is an Angular application scaffolded with the Angular CLI. It demonstrates how to include and initialize the **wavebinder** library and run a minimal example setup.
 
-## Code scaffolding
+It’s intended as a quick starting point for developers who want to explore Wavebinder in a real application context without the overhead of a full custom project.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Why it exists
 
-## Build
+Wavebinder is designed to simplify complex data relationships in reactive applications by modeling data as graph nodes and handling dependencies via RxJS.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This example shows:
 
-## Running unit tests
+* a minimal Angular project that imports and uses Wavebinder
+* basic structure of components and services interacting via Wavebinder
+* how to run the app locally
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features (example only)
 
-## Running end-to-end tests
+* Angular-based frontend scaffold
+* Wavebinder integrated in the app setup
+* Demonstrates basic project structure and usage
+* Serves as a template/reference for custom integrations
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Quick start
 
-## Further help
+### Requirements
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Node.js (LTS recommended)
+* npm or yarn
+* Angular CLI (optional)
+
+### Install
+
+```bash
+git clone https://github.com/wavebinder/wavebinder-robot-example.git
+cd wavebinder-robot-example
+npm install
+```
+
+### Run locally
+
+```bash
+npm start
+```
+
+Navigate to `http://localhost:4200/` in your browser.
+
+## Project structure
+
+```text
+src/                # Angular app source
+  app/              # Angular components and services
+  assets/           # Static assets
+angular.json        # Angular CLI configuration
+package.json        # Dependencies and scripts
+```
+
+The project follows standard Angular CLI conventions.
+
+## Notes
+
+* This repository contains **example code only**.
+* It is intentionally simple and not production-hardened.
+* No specific Wavebinder architecture is enforced; adapt it freely to your needs.
+
+## References
+
+* Wavebinder™ official site: [https://wavebinder.it](https://wavebinder.it)
